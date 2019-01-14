@@ -4,63 +4,60 @@
 #def functions
 
 def add(x, y):
-
     return x + y
 
 def subtract(x, y):
-
     return x - y
 
 def multiply(x, y):
-
     return x * y
 
 def divide(x, y):
-
     return x / y
 
 #start
 
 print('Select one of the following operations')
-
 print('1 Add')
-
 print('2 subtract')
-
 print('3 multiply')
-
 print('4 divide')
 
-#give choices values
-
-choice = input('Enter choice 1/2/3/4: ')
-
-num1 = input('Enter first number ')
-
-num2 = input('Enter second number ')
 
 #calculations
+choice = None
+num1 = None
+num2 = None
 
-if choice == '1' and num1.isdigit()==True and num2.isdigit()==True:
+while choice is None:
+    try:
+        choice = int(input('Enter choice 1/2/3/4: '))
+    except ValueError:
+        print('ENTER AN INTEGER, GOD DAMMIT!!!')
 
+while num1 is None:
+    try:
+        num1 = int(input('Enter first number: '))
+    except ValueError:
+        print('ENTER AN INTEGER, GOD DAMMIT!!!')
+
+while num2 is None:
+    try:
+        num2 = int(input('Enter Second number: '))
+    except ValueError:
+        print('ENTER AN INTEGER, GOD DAMMIT!!!')
+        
+if choice == 1:
     print(num1,'+',num2,'=', add(num1,num2))
- 
 
-elif choice == '2' and num1.isdigit()==True and num2.isdigit()==True:
-
+elif choice == 2:
      print(num1,'-',num2,'=', subtract(num1,num2))
- 
 
-elif choice == '3' and num1.isdigit()==True and num2.isdigit()==True:
-
+elif choice == 3:
     print(num1,'*',num2,'=', multiply(num1,num2))
-   
 
-elif choice == '4' and num1.isdigit()==True and num2.isdigit()==True:
-
+elif choice == 4:
     print(num1,'/',num2,'=', divide(num1,num2))
 
-
 else:
-
-    print('Invalid character entered')
+    print('Did not enter 1,2,3 or 4!')
